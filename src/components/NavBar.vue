@@ -11,13 +11,13 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <a class="navbar-item" href="https://google.it">
-                        <font-awesome-icon icon="user-secret" />
+                        <font-awesome-icon :icon="['far', 'envelope']" class="NavBar__icon"/>
                     </a>
                     <a class="navbar-item" href="https://google.it">
-                        Linkedin
+                        <font-awesome-icon :icon="['fab', 'linkedin-in']" class="NavBar__icon"/>
                     </a>
                     <a class="navbar-item" href="https://google.it">
-                        Email
+                        <font-awesome-icon :icon="['far', 'file']" class="NavBar__icon"/>
                     </a>
                 </div>
             </div>
@@ -40,6 +40,11 @@ export default {
 
 .NavBar__brand  img{
     max-height: 60px;
+}
+
+.NavBar__icon  {
+    font-size: 24px; 
+    color: black;
 }
 
 </style>
