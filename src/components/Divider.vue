@@ -17,8 +17,12 @@ export default {
 
 @import "../assets/sass/main.scss";
 
+.Divider{
+    padding: 1rem;
+}
+
 .Divider__line  {
-    border-top: 3px solid $purple;
+    border-top: 3px solid $pink;
     width: 300px;
 }
 

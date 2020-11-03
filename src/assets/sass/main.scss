@@ -4,17 +4,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap');
 
 // Set your brand colors
-$purple: #8A4D76;
-$pink: #3f2c2f;
-$brown: #757763;
-$beige-light: #ffffff;
-$beige-lighter: #ffffff;
+$black: #232323;
+$pink: #F4B0BF;
+$grey-light: #F9F9F9;
+$white: #FFFFFF;
 
 // Update Bulma's global variables
 $family-sans-serif: "Assistant", sans-serif;
-$grey-dark: $brown;
-$grey-light: $beige-light;
-$primary: $purple;
+$grey-dark: $grey-light;
+$grey-light: $grey-light;
+$primary: $black;
 $link: $pink;
 $widescreen-enabled: true;
 $fullhd-enabled: true;
@@ -25,7 +24,7 @@ $navbar-height: 3rem;
 
 
 // Update some of Bulma's component variables
-$body-background-color: $beige-lighter;
+$body-background-color: $white;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
