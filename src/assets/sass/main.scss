@@ -11,7 +11,7 @@ $white: #FFFFFF;
 
 // Update Bulma's global variables
 $family-sans-serif: "Assistant", sans-serif;
-$grey-dark: $grey-light;
+$grey-dark: $black;
 $grey-light: $grey-light;
 $primary: $black;
 $link: $pink;
@@ -25,8 +25,14 @@ $navbar-height: 3rem;
 
 // Update some of Bulma's component variables
 $body-background-color: $white;
+
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
+
+$box-background-color: $grey-light;
+$box-color: $black;
+$box-shadow: 0;
+$box-padding: 3rem;
 
 @import '~bulma'
