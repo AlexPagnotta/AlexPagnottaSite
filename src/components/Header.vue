@@ -1,7 +1,13 @@
 <template> 
-  <div class="Header">
-    <h1 class="title is-1"> {{ title }} </h1>
-  </div>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container ">
+        <h1 class="title is-2 has-text-centered has-text-weight-light">
+          {{ title }}
+        </h1>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -15,11 +21,3 @@ export default {
 
 </script>
 
-
-<style scoped>
-
-.Header{
-  height: 200px;
-}
-
-</style>
