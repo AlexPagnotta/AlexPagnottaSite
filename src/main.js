@@ -8,9 +8,10 @@ import App from './App.vue';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-import { faUserSecret  } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedinIn, faMedium, faGithub   } from '@fortawesome/free-brands-svg-icons';
+import { faFile,faEnvelope  } from '@fortawesome/free-regular-svg-icons';
 
-library.add(faUserSecret );
+library.add(faLinkedinIn, faMedium, faGithub, faEnvelope, faFile );
 
 // -- Font Awesome Initialization
 
