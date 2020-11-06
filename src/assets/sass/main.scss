@@ -14,7 +14,8 @@ $family-sans-serif: "Assistant", sans-serif;
 $grey-dark: $black;
 $grey-light: $grey-light;
 $primary: $black;
-$link: $pink;
+$link: $black;
+$info:  #F4B0BF; 
 $widescreen-enabled: true;
 $fullhd-enabled: true;
 
@@ -26,13 +27,23 @@ $navbar-height: 3rem;
 // Update some of Bulma's component variables
 $body-background-color: $white;
 
+// Controls and inputs
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
-$box-background-color: $grey-light;
+// Box
+$box-background-color: $white;
 $box-color: $black;
 $box-shadow: 0;
 $box-padding: 3rem;
+
+//Footer
+$footer-padding: 3rem 1.5rem 3rem;
+$footer-background-color: $grey-light;
+
+//Card
+$card-shadow: 0 0 0 rgba($white, 0.1);
+$card-content-padding: 1.5rem 0 1.5rem 0;
 
 @import '~bulma'
