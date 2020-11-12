@@ -11,10 +11,10 @@
         title="I Miei Articoli" 
         :icon="['fab', 'medium']"
         link="https://medium.com/@alexpagnotta"/>
-      <ItemsContainer 
-        title="I Miei Progetti" 
-        :icon="['fab', 'github']"
-        link="https://github.com/AlexPagnotta" />   
+      <GithubProjectsContainer 
+        :data="data"
+        :isLoading="isLoading"
+        :hasError= "hasError" />
   </div>
   <Panel 
     imageSrc= "profile.jpg"
@@ -56,11 +56,30 @@ import Divider from './components/Divider.vue'
 import ItemsContainer from './components/ItemsContainer.vue'
 import Panel from './components/Panel.vue'
 import Footer from './components/Footer.vue'
+import GithubProjectsContainer from './components/GithubProjectsContainer.vue'
+import axios from 'axios'
 
 export default {
   name: 'App',
   components: {
-    NavBar, Header, Divider, ItemsContainer, Panel, Footer
+    NavBar, Header, Divider, GithubProjectsContainer,ItemsContainer, Panel, Footer
+  },
+  data () {
+    return {
+      data: null,
+      isLoading: true,
+      hasError: false
+    }
+  },
+  mounted () {
+    axios
+      .get('https://api.github.com/users/alexpagnotta/repos')
+      .then(response => (this.data = response.data))
+      .catch(error => {
+        console.log(error)
+        this.error = true
+      })
+      .finally(() => this.loading = false)
   }
 }
 
