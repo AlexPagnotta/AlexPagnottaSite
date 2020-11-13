@@ -8,17 +8,7 @@
       </a>
     </div>
       
-    <div class="columns is-variable is-0-mobile is-3-tablet is-8-desktop mt-6">
-      <div class="column">
-        <Item title="Usare una Azure Function per monitorare la copertura Open Fiber" imageSrc="https://bulma.io/images/placeholders/1280x960.png"></Item>
-      </div>
-      <div class="column">
-        <Item title="Usare una Azure Function per monitorare la copertura Open Fiber" imageSrc="https://bulma.io/images/placeholders/1280x960.png"></Item>
-      </div>
-      <div class="column">
-        <Item title="Usare una Azure Function per monitorare la copertura Open Fiber" imageSrc="https://bulma.io/images/placeholders/1280x960.png"></Item>
-      </div>
-    </div>
+    <slot></slot>
 
     <div class="is-flex is-justify-content-center mt-6">
       <button class="button is-primary is-light  is-medium">
@@ -35,13 +25,10 @@
 
 <script>
 
-import Item from './Item.vue'
-
 
 export default {
   name: 'ItemsContainer',
   components: {
-    Item
   },
   props: {
     icon: Array,

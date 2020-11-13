@@ -6,12 +6,10 @@
       </figure>
     </div>
     <div class="card-content">    
-      <p class="title is-5">{{title}}</p>
+      <p  class="title is-5"><a :href="urlLink">{{title}}</a></p>
       <div class="content">
           <div class="tags">
-            <span class="tag is-info is-light">C#</span>
-            <span class="tag is-info is-light">Azure</span>
-            <span class="tag is-info is-light">Serverless</span>
+            <span class="tag is-info is-light" v-for="tag in tags" v-bind:key="tag">{{tag}}</span>
           </div>
       </div>
     </div>
@@ -24,7 +22,9 @@ export default {
   name: 'Item',
   props: {
     title: String,
-    imageSrc: String
+    urlLink: String,
+    imageSrc: String,
+    tags: Array
   }
 }
 

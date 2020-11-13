@@ -73,13 +73,23 @@ export default {
   },
   mounted () {
     axios
-      .get('https://api.github.com/users/alexpagnotta/repos')
-      .then(response => (this.data = response.data))
+      .get('https://api.github.com/users/alexpagnotta/repos', {
+        headers: {
+          'Accept': 'application/vnd.github.mercy-preview+json'
+        }})
+      .then(response => (
+        this.data = response.data.filter(project => {
+          return (
+          project.name === 'AlexPagnottaPersonalSite' || 
+          project.name === 'BookApp' ||
+          project.name === 'OpenFiberAzureFunction'
+        )})
+      ))
       .catch(error => {
         console.log(error)
-        this.error = true
+        this.hasError = true
       })
-      .finally(() => this.loading = false)
+      .finally(() => this.isLoading = false)
   }
 }
 
