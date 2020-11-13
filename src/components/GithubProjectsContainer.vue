@@ -28,17 +28,39 @@
 
 import ItemsContainer from './ItemsContainer.vue'
 import Item from './Item.vue'
-
+import axios from 'axios'
 
 export default {
   name: 'GithubProjectsContainer',
   components: {
     ItemsContainer, Item
   },
-  props: {
-    data: Array,
-    isLoading: Boolean,
-    hasError: Boolean
+  data () {
+    return {
+      data: null,
+      isLoading: true,
+      hasError: false
+    }
+  },
+  mounted () {
+    axios
+      .get('https://api.github.com/users/alexpagnotta/repos', {
+        headers: {
+          'Accept': 'application/vnd.github.mercy-preview+json'
+        }})
+      .then(response => (
+        this.data = response.data.filter(project => {
+          return (
+          project.name === 'AlexPagnottaPersonalSite' || 
+          project.name === 'BookApp' ||
+          project.name === 'OpenFiberAzureFunction'
+        )})
+      ))
+      .catch(error => {
+        console.log(error)
+        this.hasError = true
+      })
+      .finally(() => this.isLoading = false)
   }
 }
 
