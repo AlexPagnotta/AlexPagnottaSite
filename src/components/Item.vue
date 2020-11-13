@@ -1,17 +1,17 @@
 <template> 
-  <div class="card">
+  <div class="Item card">
     <div class="card-image">
       <figure class="image is-4by3">
-        <img :src="imageSrc" alt="Placeholder image">
+        <a :href="urlLink">
+          <img :src="imageSrc" alt="Placeholder image">
+        </a>
       </figure>
     </div>
     <div class="card-content">    
-      <p class="title is-5">{{title}}</p>
+      <p  class="title is-5"><a :href="urlLink">{{title}}</a></p>
       <div class="content">
           <div class="tags">
-            <span class="tag is-info is-light">C#</span>
-            <span class="tag is-info is-light">Azure</span>
-            <span class="tag is-info is-light">Serverless</span>
+            <span class="tag is-info is-light" v-for="tag in tags" v-bind:key="tag">{{tag}}</span>
           </div>
       </div>
     </div>
@@ -24,13 +24,22 @@ export default {
   name: 'Item',
   props: {
     title: String,
-    imageSrc: String
+    urlLink: String,
+    imageSrc: String,
+    tags: Array
   }
 }
 
 </script>
 
 <style scoped>
+
+.ItemsContainer img{
+    object-fit: cover;
+
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(80%);
+}
 
 </style>
 
