@@ -1,8 +1,10 @@
 <template> 
-  <div class="card">
+  <div class="Item card">
     <div class="card-image">
       <figure class="image is-4by3">
-        <img :src="imageSrc" alt="Placeholder image">
+        <a :href="urlLink">
+          <img :src="imageSrc" alt="Placeholder image">
+        </a>
       </figure>
     </div>
     <div class="card-content">    
@@ -31,6 +33,13 @@ export default {
 </script>
 
 <style scoped>
+
+.ItemsContainer img{
+    object-fit: cover;
+
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(80%);
+}
 
 </style>
 

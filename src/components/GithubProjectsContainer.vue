@@ -2,7 +2,7 @@
     <ItemsContainer 
       title="I Miei Progetti" 
       :icon="['fab', 'github']"
-      link="https://github.com/AlexPagnotta"> 
+      seeRestlink="https://github.com/AlexPagnotta"> 
       
       <div v-if="isLoading === true">
         Loading <!--TODO: Replace with a component and add style-->
@@ -15,7 +15,7 @@
           <Item 
           :title="project.name" 
           :urlLink="project.html_url" 
-          imageSrc="https://bulma.io/images/placeholders/1280x960.png" 
+          :imageSrc= "require(`@/assets/images/github-images/${project.name}.png`)"
           :tags="project.topics"></Item>
         </div>  
       </div>
