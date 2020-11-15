@@ -5,10 +5,15 @@
         seeRestlink="https://medium.com/@alexpagnotta">
       
       <div v-if="isLoading === true">
-        Loading <!--TODO: Replace with a component and add style-->
+        <LoadingSpinner/>
       </div>
       <div v-if="hasError === true">
-        Error <!--TODO: Replace with a component and add style-->
+        <ErrorBanner>
+          <p class="title is-4">Ops! Questo non era previsto...</p>
+          <p class="subtitle is-size-6 mt-5">
+            Ehy, vi giuro sono un buon sviluppatore, questo errore non dipende da me, sarà sicuramente il feed RSS di Medium ad avere qualche problema.
+          </p>
+        </ErrorBanner>
       </div>
       <div v-else class="columns is-variable is-0-mobile is-3-tablet is-8-desktop mt-6">
         <div class="column" v-for="article in feed" v-bind:key="article.guid">
@@ -28,13 +33,15 @@
 
 import ItemsContainer from './ItemsContainer.vue'
 import Item from './Item.vue'
+import LoadingSpinner from './LoadingSpinner.vue'
+import ErrorBanner from './ErrorBanner.vue'
 import RSSParser from "rss-parser";
 //import axios from 'axios'
 
 export default {
   name: 'MediumArticlesContainer',
   components: {
-    ItemsContainer, Item
+    ItemsContainer, Item, LoadingSpinner, ErrorBanner
   },
   data () {
     return {
