@@ -7,14 +7,8 @@
         </h1>
       </Header>
       <Divider/>
-      <ItemsContainer 
-        title="I Miei Articoli" 
-        :icon="['fab', 'medium']"
-        link="https://medium.com/@alexpagnotta"/>
-      <GithubProjectsContainer 
-        :data="data"
-        :isLoading="isLoading"
-        :hasError= "hasError" />
+      <MediumArticlesContainer/>
+      <GithubProjectsContainer/>
   </div>
   <Panel 
     imageSrc= "profile.jpg"
@@ -53,43 +47,15 @@
 import NavBar from './components/NavBar.vue'
 import Header from './components/Header.vue'
 import Divider from './components/Divider.vue'
-import ItemsContainer from './components/ItemsContainer.vue'
 import Panel from './components/Panel.vue'
 import Footer from './components/Footer.vue'
 import GithubProjectsContainer from './components/GithubProjectsContainer.vue'
-import axios from 'axios'
+import MediumArticlesContainer from './components/MediumArticlesContainer.vue'
 
 export default {
   name: 'App',
   components: {
-    NavBar, Header, Divider, GithubProjectsContainer,ItemsContainer, Panel, Footer
-  },
-  data () {
-    return {
-      data: null,
-      isLoading: true,
-      hasError: false
-    }
-  },
-  mounted () {
-    axios
-      .get('https://api.github.com/users/alexpagnotta/repos', {
-        headers: {
-          'Accept': 'application/vnd.github.mercy-preview+json'
-        }})
-      .then(response => (
-        this.data = response.data.filter(project => {
-          return (
-          project.name === 'AlexPagnottaPersonalSite' || 
-          project.name === 'BookApp' ||
-          project.name === 'OpenFiberAzureFunction'
-        )})
-      ))
-      .catch(error => {
-        console.log(error)
-        this.hasError = true
-      })
-      .finally(() => this.isLoading = false)
+    NavBar, Header, Divider, GithubProjectsContainer, MediumArticlesContainer, Panel, Footer
   }
 }
 
