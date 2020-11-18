@@ -6,9 +6,9 @@ I've made the site with Vue.JS mainly for learning purposes, it automatically co
 
 [Visit my website](https://alexpagnotta.me)
 
-<img src="SiteCoverImage.png" width="1920" heigth="1080">
+<br>
 
-[My Old Site made with Gatsby](https://github.com/AlexPagnotta/AlexPagnottaSite_Legacy)
+<img src="SiteCoverImage.png" width="1920" heigth="1080">
 
 ### Developed by Alex Pagnotta
 
