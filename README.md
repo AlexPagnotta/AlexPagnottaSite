@@ -4,7 +4,7 @@ This is my personal site, a little showcase for my articles on Medium and my pro
 
 I've made the site with Vue.JS mainly for learning purposes, it automatically connect to Github Api and Medium RSS, so it's always updated with my latest works, Bulma.io is used for the UI, and the entire site is hosted on Netlify.
 
-[Visit my website](https://alexpagnotta.me)
+[Visit my website](https://alexpagnotta.com)
 
 <br>
 
