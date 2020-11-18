@@ -2,7 +2,7 @@
     <nav class="NavBar navbar is-spaced" role="navigation" aria-label="main navigation">
 
         <div class="NavBar__brand navbar-brand">
-            <a class="navbar-item" href="https://google.it">
+            <a class="navbar-item">
                 <img src="../assets/images/logo.png">
             </a>
         </div>
